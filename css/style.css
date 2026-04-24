@@ -1,0 +1,14 @@
+/* Web Teknolojileri Proje - Ana Stil Dosyası */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    background-color: #f8f9fa;
+}
+
+main {
+    min-height: 70vh;
+}
+
+footer {
+    margin-top: auto;
+}
