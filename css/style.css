@@ -790,6 +790,289 @@ footer {
     margin-bottom: 0;
 }
 
+/* ===== MİRASIMIZ SAYFASI ===== */
+.miras-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.miras-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.miras-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.85) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 60px;
+}
+
+.miras-unesco-badge {
+    display: inline-block;
+    background: rgba(234, 179, 8, 0.2);
+    border: 1px solid rgba(234, 179, 8, 0.5);
+    color: #fbbf24;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.miras-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.miras-hero-sub {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+}
+
+.miras-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.miras-baslik {
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 3px solid #6366f1;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.miras-baslik i {
+    color: #6366f1;
+}
+
+.miras-card p {
+    color: #475569;
+    line-height: 1.8;
+}
+
+.miras-gorsel-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.miras-gorsel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.miras-gorsel-card:hover .miras-gorsel {
+    transform: scale(1.05);
+}
+
+/* Rakam Kartları */
+.rakam-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.rakam-card:hover {
+    transform: translateY(-5px);
+    border-bottom-color: #6366f1;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.12);
+}
+
+.rakam-sayi {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #6366f1;
+    line-height: 1;
+}
+
+.rakam-birim {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.rakam-aciklama {
+    font-size: 0.9rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Tablo */
+.miras-tablo {
+    margin-bottom: 0;
+}
+
+.miras-tablo thead th {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 20px;
+    border: none;
+}
+
+.miras-tablo thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.miras-tablo thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+.miras-tablo tbody td {
+    padding: 14px 20px;
+    color: #475569;
+    border-color: #f1f5f9;
+    vertical-align: middle;
+}
+
+.miras-tablo tbody tr:hover {
+    background: #f8fafc;
+}
+
+.text-primary {
+    color: #6366f1 !important;
+}
+
+/* Kapı Kartları */
+.kapi-card {
+    padding: 10px 0;
+}
+
+.kapi-yon {
+    display: inline-block;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    color: #6366f1;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.kapi-isim {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+.kapi-diger {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.kapi-card p {
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* Burç Kartları */
+.burc-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #6366f1;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.burc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.12);
+}
+
+.burc-card h4 {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.burc-card h4 i {
+    color: #6366f1;
+}
+
+.burc-card p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Galeri */
+.miras-galeri-item {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.miras-galeri-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.miras-galeri-item:hover img {
+    transform: scale(1.08);
+}
+
+.miras-galeri-item::after {
+    content: '\f00e';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.miras-galeri-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(99, 102, 241, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.miras-galeri-item:hover::after,
+.miras-galeri-item:hover::before {
+    opacity: 1;
+}
+
 /* ===== LIGHTBOX ===== */
 .slider-lightbox {
     position: fixed;
@@ -855,6 +1138,18 @@ footer {
 
     .hero-buttons .btn-light {
         margin-right: 0 !important;
+    }
+
+    .miras-hero {
+        height: 50vh;
+    }
+
+    .miras-hero-title {
+        font-size: 2rem;
+    }
+
+    .rakam-sayi {
+        font-size: 1.8rem;
     }
 
     .slider-track {
