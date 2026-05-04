@@ -1073,6 +1073,249 @@ footer {
     opacity: 1;
 }
 
+/* ===== İLGİ ALANLARI (API) SAYFASI ===== */
+.api-bilgi {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #6366f1;
+}
+
+.api-durum {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.api-basarili {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.api-hata {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.film-arama,
+.film-filtre {
+    border-radius: 10px;
+    padding: 10px 15px;
+    border-color: #e2e8f0;
+}
+
+.film-arama:focus,
+.film-filtre:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.film-ara-btn {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.film-ara-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+/* Film Kartları */
+.film-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+}
+
+.film-poster-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+.film-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.film-card:hover .film-poster {
+    transform: scale(1.05);
+}
+
+.film-poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(99, 102, 241, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.film-poster-overlay i {
+    font-size: 2rem;
+}
+
+.film-card:hover .film-poster-overlay {
+    opacity: 1;
+}
+
+.film-poster-yok {
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #94a3b8;
+}
+
+.film-poster-yok i {
+    font-size: 3rem;
+}
+
+.film-bilgi {
+    padding: 15px;
+}
+
+.film-adi {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.film-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.film-yil {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.film-puan {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.puan-yuksek {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.puan-orta {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.puan-dusuk {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.film-ozet {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Film Modal */
+.film-modal-content {
+    background: #0f172a;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.film-modal-kapat {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.film-modal-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+}
+
+.film-modal-detay {
+    padding: 30px;
+    color: #e2e8f0;
+}
+
+.film-modal-detay h3 {
+    color: #fff;
+}
+
+.film-modal-meta {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.film-puan-badge {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.film-modal-detay .text-muted {
+    color: #94a3b8 !important;
+}
+
 /* ===== LIGHTBOX ===== */
 .slider-lightbox {
     position: fixed;
