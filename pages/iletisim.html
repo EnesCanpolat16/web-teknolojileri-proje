@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Enes Canpolat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="../index.html"><i class="fa-solid fa-code me-2"></i>Enes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Hakkında</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Giriş</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sayfa Başlığı -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="page-title">İletişim</h1>
+            <p class="page-subtitle">Benimle iletişime geçmek için formu doldurun</p>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        <div class="row">
+
+            <!-- Sol: İletişim Bilgileri -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="iletisim-bilgi-card fade-in">
+                    <h4 class="fw-bold mb-4"><i class="fa-solid fa-address-book me-2 text-primary"></i>İletişim Bilgileri</h4>
+
+                    <div class="iletisim-bilgi-item">
+                        <div class="iletisim-bilgi-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <span class="iletisim-bilgi-label">E-posta</span>
+                            <span class="iletisim-bilgi-deger">enescanpolat162@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="iletisim-bilgi-item">
+                        <div class="iletisim-bilgi-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <span class="iletisim-bilgi-label">Telefon</span>
+                            <span class="iletisim-bilgi-deger">0537 374 67 15</span>
+                        </div>
+                    </div>
+
+                    <div class="iletisim-bilgi-item">
+                        <div class="iletisim-bilgi-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <span class="iletisim-bilgi-label">Adres</span>
+                            <span class="iletisim-bilgi-deger">Sakarya Üniversitesi, Sakarya</span>
+                        </div>
+                    </div>
+
+                    <div class="iletisim-bilgi-item">
+                        <div class="iletisim-bilgi-icon"><i class="fa-brands fa-github"></i></div>
+                        <div>
+                            <span class="iletisim-bilgi-label">GitHub</span>
+                            <a href="https://github.com/enescanpolat16" target="_blank" class="iletisim-bilgi-deger">github.com/enescanpolat16</a>
+                        </div>
+                    </div>
+
+                    <!-- Validation Bilgisi -->
+                    <div class="validation-info mt-4">
+                        <h6 class="fw-bold"><i class="fa-solid fa-circle-info me-2"></i>Form Doğrulama</h6>
+                        <p class="mb-2">Bu formda iki farklı doğrulama yöntemi kullanılmaktadır:</p>
+                        <div class="validation-tip js-tip">
+                            <i class="fa-brands fa-js-square me-1"></i> <strong>Native JS</strong> — Saf JavaScript ile kontrol
+                        </div>
+                        <div class="validation-tip vue-tip">
+                            <i class="fa-brands fa-vuejs me-1"></i> <strong>Vue.js</strong> — Vue framework ile kontrol
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ: Form -->
+            <div class="col-lg-8">
+                <div class="iletisim-form-card fade-in" id="vueApp">
+                    <h4 class="fw-bold mb-4"><i class="fa-solid fa-paper-plane me-2 text-primary"></i>Mesaj Gönder</h4>
+
+                    <form id="iletisimForm" action="../php/iletisim.php" method="POST" novalidate>
+
+                        <!-- Ad Soyad -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="ad" class="form-label">Ad <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-input" id="ad" name="ad" placeholder="Adınız">
+                                <div class="hata-mesaji" id="hataAd"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="soyad" class="form-label">Soyad <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control form-input" id="soyad" name="soyad" placeholder="Soyadınız">
+                                <div class="hata-mesaji" id="hataSoyad"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control form-input" id="email" name="email" placeholder="ornek@mail.com">
+                            <div class="hata-mesaji" id="hataEmail"></div>
+                        </div>
+
+                        <!-- Telefon -->
+                        <div class="mb-3">
+                            <label for="telefon" class="form-label">Telefon <span class="text-danger">*</span></label>
+                            <input type="tel" class="form-control form-input" id="telefon" name="telefon" placeholder="05XX XXX XX XX">
+                            <div class="hata-mesaji" id="hataTelefon"></div>
+                        </div>
+
+                        <!-- Doğum Tarihi -->
+                        <div class="mb-3">
+                            <label for="dogumTarihi" class="form-label">Doğum Tarihi</label>
+                            <input type="date" class="form-control form-input" id="dogumTarihi" name="dogumTarihi">
+                        </div>
+
+                        <!-- Cinsiyet (Radio) -->
+                        <div class="mb-3">
+                            <label class="form-label">Cinsiyet <span class="text-danger">*</span></label>
+                            <div class="d-flex gap-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek">
+                                    <label class="form-check-label" for="erkek">Erkek</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadın">
+                                    <label class="form-check-label" for="kadin">Kadın</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="cinsiyet" id="belirtmek" value="Belirtmek istemiyorum">
+                                    <label class="form-check-label" for="belirtmek">Belirtmek istemiyorum</label>
+                                </div>
+                            </div>
+                            <div class="hata-mesaji" id="hataCinsiyet"></div>
+                        </div>
+
+                        <!-- Konu (Select) -->
+                        <div class="mb-3">
+                            <label for="konu" class="form-label">Konu <span class="text-danger">*</span></label>
+                            <select class="form-select form-input" id="konu" name="konu">
+                                <option value="">-- Konu Seçiniz --</option>
+                                <option value="Genel Bilgi">Genel Bilgi</option>
+                                <option value="İş Birliği">İş Birliği</option>
+                                <option value="Proje Teklifi">Proje Teklifi</option>
+                                <option value="Öneri / Şikayet">Öneri / Şikayet</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                            <div class="hata-mesaji" id="hataKonu"></div>
+                        </div>
+
+                        <!-- İlgi Alanları (Checkbox) -->
+                        <div class="mb-3">
+                            <label class="form-label">İlgi Alanları</label>
+                            <div class="row g-2">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiWeb" value="Web Geliştirme">
+                                        <label class="form-check-label" for="ilgiWeb">Web Geliştirme</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiMobil" value="Mobil Uygulama">
+                                        <label class="form-check-label" for="ilgiMobil">Mobil Uygulama</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiOyun" value="Oyun Geliştirme">
+                                        <label class="form-check-label" for="ilgiOyun">Oyun Geliştirme</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiVeri" value="Veri Bilimi">
+                                        <label class="form-check-label" for="ilgiVeri">Veri Bilimi</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiYZ" value="Yapay Zeka">
+                                        <label class="form-check-label" for="ilgiYZ">Yapay Zeka</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ilgiAlanlari[]" id="ilgiDiger" value="Diğer">
+                                        <label class="form-check-label" for="ilgiDiger">Diğer</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Deneyim Seviyesi (Range) -->
+                        <div class="mb-3">
+                            <label for="deneyim" class="form-label">Deneyim Seviyesi: <span id="deneyimDeger" class="fw-bold text-primary">5</span>/10</label>
+                            <input type="range" class="form-range" id="deneyim" name="deneyim" min="1" max="10" value="5" oninput="document.getElementById('deneyimDeger').textContent = this.value">
+                        </div>
+
+                        <!-- Mesaj (Textarea) -->
+                        <div class="mb-3">
+                            <label for="mesaj" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+                            <textarea class="form-control form-input" id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+                            <div class="hata-mesaji" id="hataMesaj"></div>
+                        </div>
+
+                        <!-- Dosya Yükleme -->
+                        <div class="mb-3">
+                            <label for="dosya" class="form-label">Dosya Ekle (opsiyonel)</label>
+                            <input type="file" class="form-control form-input" id="dosya" name="dosya">
+                        </div>
+
+                        <!-- KVKK Onay (Checkbox) -->
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="kvkk" name="kvkk" value="Evet">
+                                <label class="form-check-label" for="kvkk">Kişisel verilerimin işlenmesini kabul ediyorum. <span class="text-danger">*</span></label>
+                            </div>
+                            <div class="hata-mesaji" id="hataKvkk"></div>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-js-validate w-100" onclick="nativeValidation()">
+                                    <i class="fa-brands fa-js-square me-2"></i>Native JS ile Gönder
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-vue-validate w-100" onclick="vueValidation()">
+                                    <i class="fa-brands fa-vuejs me-2"></i>Vue.js ile Gönder
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Sonuç Mesajı -->
+                        <div class="mt-3 d-none" id="sonucMesaji"></div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center py-4">
+            <p class="mb-0 text-light">&copy; 2026 Enes Canpolat — Web Teknolojileri Projesi</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- ============================================ -->
+    <!-- NATIVE JAVASCRIPT VALIDATION -->
+    <!-- ============================================ -->
+    <script>
+        function nativeValidation() {
+            // Önceki hataları temizle
+            temizleHatalar();
+            var hataSayisi = 0;
+
+            // Ad kontrolü
+            var ad = document.getElementById('ad').value.trim();
+            if (ad === '') {
+                hataGoster('hataAd', 'ad', 'Ad alanı boş bırakılamaz.');
+                hataSayisi++;
+            } else if (ad.length < 2) {
+                hataGoster('hataAd', 'ad', 'Ad en az 2 karakter olmalıdır.');
+                hataSayisi++;
+            }
+
+            // Soyad kontrolü
+            var soyad = document.getElementById('soyad').value.trim();
+            if (soyad === '') {
+                hataGoster('hataSoyad', 'soyad', 'Soyad alanı boş bırakılamaz.');
+                hataSayisi++;
+            } else if (soyad.length < 2) {
+                hataGoster('hataSoyad', 'soyad', 'Soyad en az 2 karakter olmalıdır.');
+                hataSayisi++;
+            }
+
+            // Email kontrolü
+            var email = document.getElementById('email').value.trim();
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                hataGoster('hataEmail', 'email', 'E-posta alanı boş bırakılamaz.');
+                hataSayisi++;
+            } else if (!emailRegex.test(email)) {
+                hataGoster('hataEmail', 'email', 'Geçerli bir e-posta adresi giriniz.');
+                hataSayisi++;
+            }
+
+            // Telefon kontrolü
+            var telefon = document.getElementById('telefon').value.trim();
+            var telefonTemiz = telefon.replace(/\s/g, '');
+            var telefonRegex = /^[0-9]+$/;
+            if (telefon === '') {
+                hataGoster('hataTelefon', 'telefon', 'Telefon alanı boş bırakılamaz.');
+                hataSayisi++;
+            } else if (!telefonRegex.test(telefonTemiz)) {
+                hataGoster('hataTelefon', 'telefon', 'Telefon numarası sadece rakamlardan oluşmalıdır.');
+                hataSayisi++;
+            } else if (telefonTemiz.length < 10 || telefonTemiz.length > 11) {
+                hataGoster('hataTelefon', 'telefon', 'Telefon numarası 10 veya 11 haneli olmalıdır.');
+                hataSayisi++;
+            }
+
+            // Cinsiyet kontrolü
+            var cinsiyet = document.querySelector('input[name="cinsiyet"]:checked');
+            if (!cinsiyet) {
+                hataGoster('hataCinsiyet', null, 'Lütfen cinsiyet seçiniz.');
+                hataSayisi++;
+            }
+
+            // Konu kontrolü
+            var konu = document.getElementById('konu').value;
+            if (konu === '') {
+                hataGoster('hataKonu', 'konu', 'Lütfen bir konu seçiniz.');
+                hataSayisi++;
+            }
+
+            // Mesaj kontrolü
+            var mesaj = document.getElementById('mesaj').value.trim();
+            if (mesaj === '') {
+                hataGoster('hataMesaj', 'mesaj', 'Mesaj alanı boş bırakılamaz.');
+                hataSayisi++;
+            } else if (mesaj.length < 10) {
+                hataGoster('hataMesaj', 'mesaj', 'Mesaj en az 10 karakter olmalıdır.');
+                hataSayisi++;
+            }
+
+            // KVKK kontrolü
+            var kvkk = document.getElementById('kvkk').checked;
+            if (!kvkk) {
+                hataGoster('hataKvkk', null, 'Kişisel verilerin işlenmesini kabul etmelisiniz.');
+                hataSayisi++;
+            }
+
+            // Sonuç
+            var sonucDiv = document.getElementById('sonucMesaji');
+            sonucDiv.classList.remove('d-none');
+
+            if (hataSayisi === 0) {
+                sonucDiv.className = 'mt-3 alert alert-success';
+                sonucDiv.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i><strong>Native JS:</strong> Form doğrulaması başarılı! Form gönderiliyor...';
+                // Formu gönder
+                setTimeout(function() {
+                    document.getElementById('iletisimForm').submit();
+                }, 1500);
+            } else {
+                sonucDiv.className = 'mt-3 alert alert-danger';
+                sonucDiv.innerHTML = '<i class="fa-solid fa-circle-xmark me-2"></i><strong>Native JS:</strong> ' + hataSayisi + ' adet hata bulundu. Lütfen düzeltip tekrar deneyin.';
+            }
+        }
+
+        function hataGoster(hataDivId, inputId, mesaj) {
+            var hataDiv = document.getElementById(hataDivId);
+            hataDiv.textContent = mesaj;
+            hataDiv.style.display = 'block';
+            if (inputId) {
+                document.getElementById(inputId).classList.add('is-invalid');
+            }
+        }
+
+        function temizleHatalar() {
+            // Hata mesajlarını temizle
+            var hataDivleri = document.querySelectorAll('.hata-mesaji');
+            hataDivleri.forEach(function(div) {
+                div.textContent = '';
+                div.style.display = 'none';
+            });
+
+            // Input kırmızı border'ları temizle
+            var inputs = document.querySelectorAll('.is-invalid');
+            inputs.forEach(function(input) {
+                input.classList.remove('is-invalid');
+            });
+
+            // Sonuç mesajını gizle
+            document.getElementById('sonucMesaji').classList.add('d-none');
+        }
+    </script>
+
+    <!-- ============================================ -->
+    <!-- VUE.JS VALIDATION -->
+    <!-- ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script>
+        function vueValidation() {
+            // Önceki hataları temizle
+            temizleHatalar();
+
+            // Vue instance oluştur ve validation yap
+            var app = Vue.createApp({
+                data: function() {
+                    return {
+                        formData: {
+                            ad: document.getElementById('ad').value.trim(),
+                            soyad: document.getElementById('soyad').value.trim(),
+                            email: document.getElementById('email').value.trim(),
+                            telefon: document.getElementById('telefon').value.trim(),
+                            cinsiyet: document.querySelector('input[name="cinsiyet"]:checked') ? document.querySelector('input[name="cinsiyet"]:checked').value : '',
+                            konu: document.getElementById('konu').value,
+                            mesaj: document.getElementById('mesaj').value.trim(),
+                            kvkk: document.getElementById('kvkk').checked
+                        },
+                        hatalar: {}
+                    };
+                },
+                computed: {
+                    formGecerli: function() {
+                        return Object.keys(this.hatalar).length === 0;
+                    }
+                },
+                methods: {
+                    validate: function() {
+                        this.hatalar = {};
+
+                        // Ad
+                        if (!this.formData.ad) {
+                            this.hatalar.ad = 'Ad alanı zorunludur.';
+                        } else if (this.formData.ad.length < 2) {
+                            this.hatalar.ad = 'Ad en az 2 karakter olmalıdır.';
+                        }
+
+                        // Soyad
+                        if (!this.formData.soyad) {
+                            this.hatalar.soyad = 'Soyad alanı zorunludur.';
+                        } else if (this.formData.soyad.length < 2) {
+                            this.hatalar.soyad = 'Soyad en az 2 karakter olmalıdır.';
+                        }
+
+                        // Email
+                        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!this.formData.email) {
+                            this.hatalar.email = 'E-posta alanı zorunludur.';
+                        } else if (!emailPattern.test(this.formData.email)) {
+                            this.hatalar.email = 'Geçerli bir e-posta formatı giriniz.';
+                        }
+
+                        // Telefon
+                        var telTemiz = this.formData.telefon.replace(/\s/g, '');
+                        if (!this.formData.telefon) {
+                            this.hatalar.telefon = 'Telefon alanı zorunludur.';
+                        } else if (!/^[0-9]+$/.test(telTemiz)) {
+                            this.hatalar.telefon = 'Telefon sadece rakam içermelidir.';
+                        } else if (telTemiz.length < 10 || telTemiz.length > 11) {
+                            this.hatalar.telefon = 'Telefon 10 veya 11 haneli olmalıdır.';
+                        }
+
+                        // Cinsiyet
+                        if (!this.formData.cinsiyet) {
+                            this.hatalar.cinsiyet = 'Cinsiyet seçimi zorunludur.';
+                        }
+
+                        // Konu
+                        if (!this.formData.konu) {
+                            this.hatalar.konu = 'Konu seçimi zorunludur.';
+                        }
+
+                        // Mesaj
+                        if (!this.formData.mesaj) {
+                            this.hatalar.mesaj = 'Mesaj alanı zorunludur.';
+                        } else if (this.formData.mesaj.length < 10) {
+                            this.hatalar.mesaj = 'Mesaj en az 10 karakter olmalıdır.';
+                        }
+
+                        // KVKK
+                        if (!this.formData.kvkk) {
+                            this.hatalar.kvkk = 'KVKK onayı zorunludur.';
+                        }
+
+                        return this.formGecerli;
+                    }
+                }
+            });
+
+            var vm = app.mount(document.createElement('div'));
+            var gecerli = vm.validate();
+
+            // Hataları DOM'a yansıt
+            var sonucDiv = document.getElementById('sonucMesaji');
+            sonucDiv.classList.remove('d-none');
+
+            if (!gecerli) {
+                var hataSayisi = Object.keys(vm.hatalar).length;
+
+                // Her hata için ilgili div'e yaz
+                var hataMap = {
+                    ad: { div: 'hataAd', input: 'ad' },
+                    soyad: { div: 'hataSoyad', input: 'soyad' },
+                    email: { div: 'hataEmail', input: 'email' },
+                    telefon: { div: 'hataTelefon', input: 'telefon' },
+                    cinsiyet: { div: 'hataCinsiyet', input: null },
+                    konu: { div: 'hataKonu', input: 'konu' },
+                    mesaj: { div: 'hataMesaj', input: 'mesaj' },
+                    kvkk: { div: 'hataKvkk', input: null }
+                };
+
+                Object.keys(vm.hatalar).forEach(function(key) {
+                    var map = hataMap[key];
+                    if (map) {
+                        hataGoster(map.div, map.input, vm.hatalar[key]);
+                    }
+                });
+
+                sonucDiv.className = 'mt-3 alert alert-danger';
+                sonucDiv.innerHTML = '<i class="fa-solid fa-circle-xmark me-2"></i><strong>Vue.js:</strong> ' + hataSayisi + ' adet hata bulundu. Lütfen düzeltip tekrar deneyin.';
+            } else {
+                sonucDiv.className = 'mt-3 alert alert-success';
+                sonucDiv.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i><strong>Vue.js:</strong> Form doğrulaması başarılı! Form gönderiliyor...';
+                setTimeout(function() {
+                    document.getElementById('iletisimForm').submit();
+                }, 1500);
+            }
+
+            // Vue instance temizle
+            app.unmount();
+        }
+    </script>
+</body>
+</html>
