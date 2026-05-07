@@ -25,4 +25,4 @@
 - [ ] PHP İşleme Sayfaları
 
 ## Canlı Yayın
-_(Deploy edildikten sonra eklenecek)_
+[enescanpolat.infinityfree.me/web-teknolojileri-proje/](http://enescanpolat.infinityfree.me/web-teknolojileri-proje/)
