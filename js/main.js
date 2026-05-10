@@ -1,30 +1,33 @@
-// Ana JavaScript dosyası
+// main.js - Tüm sayfalarda ortak kullanılan JavaScript dosyası
+
 console.log("Site yüklendi - Enes Web Teknolojileri Projesi");
 
-// ===== SLIDER DEĞİŞKENLERİ =====
+// Slider değişkenleri
 var currentSlide = 0;
 var autoSlideInterval = null;
 
-// Scroll animasyonları - elemanlar görünür olduğunda fade-in efekti
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Scroll animasyonları - IntersectionObserver ile elemanlar görününce fade-in
     var fadeElements = document.querySelectorAll('.fade-in');
 
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry, index) {
             if (entry.isIntersecting) {
+                // Sırayla belirmesi için her elemana gecikme ekliyorum
                 setTimeout(function() {
                     entry.target.classList.add('visible');
                 }, index * 150);
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1 }); // %10 görünür olunca tetikle
 
     fadeElements.forEach(function(el) {
         observer.observe(el);
     });
 
-    // Navbar scroll efekti
+    // Navbar - aşağı kaydırınca küçülüp gölge ekleniyor
     window.addEventListener('scroll', function() {
         var navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
@@ -36,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ===== SLIDER BAŞLAT =====
+    // Slider varsa başlat (sehrim.html'de kullanılıyor)
     var slides = document.querySelectorAll('.slider-slide');
     if (slides.length > 0) {
         startAutoSlide();
 
-        // Slide resmini tıklayınca lightbox aç
+        // Slide resmine tıklayınca lightbox aç
         slides.forEach(function(slide) {
             var img = slide.querySelector('img');
             if (img) {
@@ -53,10 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ===== SLIDER FONKSİYONLARI =====
+// === SLIDER FONKSİYONLARI ===
+// Kütüphane kullanmadan saf JS ile yazdım
+
+// direction: 1 ileri, -1 geri
 function slideChange(direction) {
     var slides = document.querySelectorAll('.slider-slide');
     if (slides.length === 0) return;
+    // Modüler aritmetik - son slide'dan sonra başa döner
     currentSlide = (currentSlide + direction + slides.length) % slides.length;
     updateSlider();
     resetAutoSlide();
@@ -68,6 +75,7 @@ function goToSlide(index) {
     resetAutoSlide();
 }
 
+// Aktif slide, dot ve thumbnail'i güncelle
 function updateSlider() {
     var slides = document.querySelectorAll('.slider-slide');
     var dots = document.querySelectorAll('.slider-dot');
@@ -84,6 +92,7 @@ function updateSlider() {
     });
 }
 
+// Her 4 saniyede otomatik ileri geçiş
 function startAutoSlide() {
     autoSlideInterval = setInterval(function() {
         slideChange(1);
@@ -95,7 +104,8 @@ function resetAutoSlide() {
     startAutoSlide();
 }
 
-// ===== LIGHTBOX =====
+// === LIGHTBOX ===
+// Resme tıklayınca tam ekran overlay açar, tıklayınca kapanır
 function openLightbox(imgSrc) {
     var overlay = document.createElement('div');
     overlay.className = 'slider-lightbox';
